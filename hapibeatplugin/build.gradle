@@ -1,0 +1,51 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'groovy'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+
+    implementation gradleApi()
+    implementation localGroovy()
+  //  api project(':beatinfo')
+    //引入ams
+    implementation 'org.ow2.asm:asm:9.1'
+    implementation 'org.ow2.asm:asm-commons:9.1'
+    implementation 'org.ow2.asm:asm-analysis:9.1'
+    implementation 'org.ow2.asm:asm-util:9.1'
+    implementation 'org.ow2.asm:asm-tree:9.1'
+    implementation 'com.android.tools.build:gradle:4.1.2', {
+        exclude group:'org.ow2.asm'
+    }
+ //   implementation 'org.javassist:javassist:3.27.0-GA'
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = 'com.hapi.hapiplugin'
+                artifactId = 'HapiAppMonitorPlugin'
+                version = '1.0'
+
+                from components.java
+            }
+        }
+
+        repositories {
+            maven {
+                url = uri("$rootDir/repo")
+            }
+        }
+    }
+}
+

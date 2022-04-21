@@ -1,0 +1,9 @@
+
+rootProject.name = "hapiapm"
+include ':app'
+
+include ':hapibeatplugin'
+
+include ':hapimonitor'
+include ':hapiblockmonitor'
+include ':testmoudle'
