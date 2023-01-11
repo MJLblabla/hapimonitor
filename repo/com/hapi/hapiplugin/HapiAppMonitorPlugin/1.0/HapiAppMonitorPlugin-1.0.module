@@ -38,11 +38,11 @@
         {
           "name": "HapiAppMonitorPlugin-1.0.jar",
           "url": "HapiAppMonitorPlugin-1.0.jar",
-          "size": 46354,
-          "sha512": "d704834fb5ddf9a308a2ea1fc14f1010a63b911f6c2846956c6a229d62db4bf8ec3fbe95a37b7311715909f41d6e4202a613636c13775986e51379f88cb45950",
-          "sha256": "e500e9220cf779185405d10536fc32660a2655ba13acff750b40251e553d3f29",
-          "sha1": "f53e04efa5568dc5a32c1c05ede0aad125619678",
-          "md5": "b976890fd48d1f531672b063043cf03c"
+          "size": 46831,
+          "sha512": "6ef91c27ca11cec51b8f0c2aa39b43cef3022f982b7817ed71d7c49c8058ae9f6fdfc4915c68ca568577a48a3731d3179ab628783b2fb75b0cb15194b0328cdb",
+          "sha256": "4651aef39d00f17d731954dd446b84e65cf58369ebfd312066ca54f71cb31321",
+          "sha1": "0cee89ef2ac743048243819dbd701653270fe335",
+          "md5": "31e0c853e13f86fc379e0a4b6f4988af"
         }
       ]
     },
@@ -118,11 +118,11 @@
         {
           "name": "HapiAppMonitorPlugin-1.0.jar",
           "url": "HapiAppMonitorPlugin-1.0.jar",
-          "size": 46354,
-          "sha512": "d704834fb5ddf9a308a2ea1fc14f1010a63b911f6c2846956c6a229d62db4bf8ec3fbe95a37b7311715909f41d6e4202a613636c13775986e51379f88cb45950",
-          "sha256": "e500e9220cf779185405d10536fc32660a2655ba13acff750b40251e553d3f29",
-          "sha1": "f53e04efa5568dc5a32c1c05ede0aad125619678",
-          "md5": "b976890fd48d1f531672b063043cf03c"
+          "size": 46831,
+          "sha512": "6ef91c27ca11cec51b8f0c2aa39b43cef3022f982b7817ed71d7c49c8058ae9f6fdfc4915c68ca568577a48a3731d3179ab628783b2fb75b0cb15194b0328cdb",
+          "sha256": "4651aef39d00f17d731954dd446b84e65cf58369ebfd312066ca54f71cb31321",
+          "sha1": "0cee89ef2ac743048243819dbd701653270fe335",
+          "md5": "31e0c853e13f86fc379e0a4b6f4988af"
         }
       ]
     }

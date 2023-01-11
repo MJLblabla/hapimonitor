@@ -42,6 +42,7 @@ abstract class AbsTransForm extends Transform {
     abstract void transformSingleFile(String baseClassPath, File file, File out)
 
     void processDirectoryInputWithIncremental(DirectoryInput directoryInput, TransformOutputProvider outputProvider, boolean isIncremental) {
+        println("输入目录 " + directoryInput.file.absolutePath)
         File dest = outputProvider.getContentLocation(
                 directoryInput.getFile().getAbsolutePath(),
                 directoryInput.getContentTypes(),
@@ -181,6 +182,9 @@ abstract class AbsTransForm extends Transform {
     }
 
     boolean needJarTransform(JarInput jarInput) {
+
+        Set<QualifiedContent.Scope> soups = jarInput.scopes
+        def soup = soups.toArray()[0]
         def hapi = mProject.hapi
         def isOpen = hapi.isOpen
         String[] whiteJarArray
@@ -189,9 +193,10 @@ abstract class AbsTransForm extends Transform {
         if (whiteJarArray != null && whiteJarArray.length != 0) {
             for (String s : whiteJarArray) {
                 def eq = (jarInput.file.name.startsWith(s) || jarInput.file.name == s) && !s.isEmpty()
-              //  println("jarInput.name " + jarInput.file.name + "    s " + s + " " + eq)
-                if (eq) {
-                    println("jarInput.name " + jarInput.file.name + "    s " + s + " " + eq)
+                def eq2 = soup == QualifiedContent.Scope.SUB_PROJECTS && jarInput.file.absolutePath.contains(s) && !s.isEmpty()
+                //  println("jarInput.name " + jarInput.file.name + "    s " + s + " " + eq)
+                if (eq || eq2) {
+                    println("jarInput.name " + jarInput.file.name + "    s " + s + " " + (eq || eq2))
                     return true
                 }
             }
@@ -217,6 +222,7 @@ abstract class AbsTransForm extends Transform {
                 input.jarInputs.each { JarInput jarInput ->
                     //处理Jar
                     // if (false) {
+                    println("输入jar " + jarInput.name + "  " + jarInput.file.absolutePath)
                     if (this.needJarTransform(jarInput)) {
                         processJarInputWithIncremental(jarInput, outputProvider, isIncremental)
                     } else {
