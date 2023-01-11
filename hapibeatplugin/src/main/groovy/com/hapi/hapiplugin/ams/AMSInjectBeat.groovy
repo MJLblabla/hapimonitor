@@ -37,7 +37,6 @@ class AMSInjectBeat {
         //处理后的字节码
         def bytes = cw.toByteArray()
 
-
         def fos = new FileOutputStream(output)
         fos.write(bytes)
         fos.close()
